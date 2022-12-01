@@ -6,7 +6,7 @@ provider "boundary" {
 }
 
 resource "boundary_scope" "org" {                            // This step creates the org on the boundary so replace as per the requirements
-  name                     = "sarva"
+  name                     = "sarva"                         // specify the name you wish
   description              = "My first scope!"
   scope_id                 = "global"
   auto_create_admin_role   = true
@@ -20,8 +20,8 @@ resource "boundary_auth_method" "password" {                // This method tells
 
 resource "boundary_account_password" "niyog" {              // This method is used to create the accounts for users which is created in the     
   auth_method_id = boundary_auth_method.password.id         // next step
-  type           = "password"
-  login_name     = "niyog"
+  type           = "password" 
+  login_name     = "niyog"                                  
   password       = "password"
 }
 
